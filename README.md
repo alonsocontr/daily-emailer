@@ -3,8 +3,10 @@
 ### This project provides an automated solution to send daily motivational emails at 8 AM. The script is designed to be cost-efficient and secure, leveraging cloud infrastructure to run on a schedule without manual intervention.
 
 **Features**
-Daily Email Sending: Sends a motivational email daily at 8 AM.
-Secure Configuration: Configured using environment variables for secure handling of credentials.
+Daily Email Sending: 
+Sends a motivational email daily at 8 AM.
+Secure Configuration: 
+Configured using environment variables for secure handling of credentials.
 Cloud-Based Scheduling: Utilizes cloud infrastructure for efficient scheduling and execution.
 
 ## Getting Started
