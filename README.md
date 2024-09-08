@@ -16,9 +16,10 @@ This project provides an automated solution to send daily motivational emails at
 - **AWS EventBridge** to schedule the script to run daily at 8 AM
 
 ### Deployment
-To deploy this script:
+To deploy this script to AWS cloud:
 1. Upload the script to AWS Lambda.
-2. Create environmental variables called EMAIL_SENDER and EMAIL_RECEIVER. Set these equal to your email address.
-3. If you're using Gmail you must generate an app password. Other providers have similar authentification.
-4. Copy the password and create the environmental variable EMAIL_PASSWORD and paste your password. 
-5. Configure AWS EventBridge to trigger the Lambda function daily at 8 AM or your preferred time.
+2. Remove line of code that loads a .env file (line 31)
+3. Create environmental variables called EMAIL_SENDER and EMAIL_RECEIVER. Set these equal to your email address.
+4. If you're using Gmail you must generate an app password. Other providers have similar authentification.
+5. Copy the password and create the environmental variable EMAIL_PASSWORD and paste your password. 
+6. Configure AWS EventBridge to trigger the Lambda function daily at 8 AM or your preferred time.
