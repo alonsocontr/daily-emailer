@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 
 random_quotes = {
+    # Dictionary storing motivational quotes with different sources
     "Batman Begins":"Why do we fall sir? So that we can learn to pick ourselves up.",
     "The Big Short":"People want an authority to tell them how to value things, but they choose this authority not based on facts or results. They choose it because it seems authoritative and familiar.",
     "Se7en": "Ernest Hemingway once wrote, 'The world is a fine place and worth fighting for.' I agree with the second part.",
@@ -27,25 +28,34 @@ random_quotes = {
     "Cast Away":"I know what I have to do now. I’ve got to keep breathing because tomorrow the sun will rise. Who knows what the tide could bring?",
     "Steve Jobs.": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.",
 }
-
+# Load a .env containing sensitive credentials
 load_dotenv("sensitiveinfo.env")
+
+# Select a random quote from the dictionary
 source, quote = random.choice(list(random_quotes.items()))
+
+# Retrieve email configuration details from environmental variables
 email_sender = os.getenv("EMAIL_SENDER")
 password = os.getenv("EMAIL_PASSWORD")
 email_receiver = os.getenv("EMAIL_RECEIVER")
 subject = "Daily Motivation"
+
+# Construct email body with selected quote and source
 body = f"""
 {quote}\n\n-{source}
 """
 
+# Create EmailMessage object to represent the email
 em = EmailMessage()
 em["From"] = email_sender
 em["To"] = email_receiver
 em["Subject"] = subject
 em.set_content(body)
 
+# Create secure SSL context for SMTP server connection
 context = ssl.create_default_context()
 
+# Connect to the SMTP server and send the email
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
     smtp.login(email_sender, password)
     smtp.sendmail(email_sender, email_receiver, em.as_string())
