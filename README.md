@@ -1,7 +1,7 @@
 # Daily Motivation Emailer
 
 ## Overview
-This project provides an automated solution to send daily motivational emails at 8 AM. The script is designed to be cost-efficient and secure, leveraging cloud infrastructure to run on a schedule without manual intervention.
+This project was made to automate the process of receiving motivational and inspiring quotes through the implementation of a daily email system.
 
 ## Features
 - **Daily Email Sending**: Sends a motivational email daily at 8 AM.
