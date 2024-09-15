@@ -1,4 +1,4 @@
-# Daily Motivation Emailer
+# Daily Motivational Emailer
 
 ## Overview
 This project was made to automate the process of receiving motivational and inspiring quotes through the implementation of a daily email system.
